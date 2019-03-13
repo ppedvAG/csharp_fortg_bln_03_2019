@@ -1,0 +1,35 @@
+﻿<Window x:Class="Events.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Events"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"  />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <TextBox Name="tbName" />
+            <Slider Name="sliderAlter" Minimum="0" Maximum="130" TickFrequency="1" IsSnapToTickEnabled="True" />
+            <Button Click="Neuer_Mensch_Click">Neuen Mensch anlegen!</Button>
+            <Button Click="Mensch_Verjüngen_Click">Mensch verjüngen</Button>
+            <Button Click="Mensch_Altern_Click">Mensch altern</Button>
+        </StackPanel>
+        
+        <ListBox Grid.Column="1" Name="listbox">
+            <!--<ListBox.ItemTemplate>
+                <DataTemplate DataType="local:Mensch">
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                        <TextBlock Text="{Binding Alter}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>-->
+            
+        </ListBox>
+    </Grid>
+</Window>

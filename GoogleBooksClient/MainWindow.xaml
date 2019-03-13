@@ -1,0 +1,26 @@
+﻿<Window x:Class="GoogleBooksClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoogleBooksClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Datei">
+                <MenuItem Header="Favoriten" />
+                <MenuItem Header="Plugin installieren" />
+                <MenuItem Header="Beenden" />
+            </MenuItem>
+        </Menu>
+        <Grid Height="100" Background="Aqua" DockPanel.Dock="Top">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock >Suchbegriff:</TextBlock>
+                <TextBox Name="tbSearchTerm" Margin="15 0 10 0" Width="200" />
+                <Button Click="Search_Books_Click">Suche</Button>
+            </StackPanel> 
+        </Grid>
+        <ListBox Name="listboxBooks" Background="Red"></ListBox>
+    </DockPanel>
+</Window>
