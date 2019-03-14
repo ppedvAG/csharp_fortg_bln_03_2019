@@ -9,8 +9,8 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Datei">
-                <MenuItem Header="Favoriten" />
-                <MenuItem Header="Plugin installieren" />
+                <MenuItem Header="Favoriten"  Click="Show_Favorites_Click"/>
+                <MenuItem Header="Plugin installieren" Click="Install_Plugin_Click" />
                 <MenuItem Header="Beenden" />
             </MenuItem>
         </Menu>
@@ -21,6 +21,15 @@
                 <Button Click="Search_Books_Click">Suche</Button>
             </StackPanel> 
         </Grid>
-        <ListBox Name="listboxBooks" Background="Red"></ListBox>
+        <StackPanel DockPanel.Dock="Top" Name="sortPanel">
+            
+        </StackPanel>
+        <ListBox Name="listboxBooks" Background="Red">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <local:BookPresenter CurrentBook="{Binding}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </DockPanel>
 </Window>
